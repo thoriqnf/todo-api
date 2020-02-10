@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 const { PORT } = require("../config");
 
 mongoose
-    .connect("mongodb://localhost/todos", {
+    .connect(process.env.MONGODB_URI || "mongodb://localhost/todos", {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
